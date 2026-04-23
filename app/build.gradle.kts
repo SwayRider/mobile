@@ -93,19 +93,19 @@ android {
             applicationIdSuffix = ".alpha"
             versionNameSuffix = "-alpha"
 
-            buildConfigField("String", "AUTH_SERVICE_HOST", "\"https://authservice.swayrider-dev.hevanto-it.com\"")
+            buildConfigField("String", "AUTH_SERVICE_HOST", "\"https://authservice.swayrider-dev.example.com\"")
             buildConfigField("Integer", "AUTH_SERVICE_PORT", "443")
             buildConfigField("String", "AUTH_SERVICE_PREFIX", "\"/api/v1/auth/\"")
 
-            buildConfigField("String", "AUTH_SERVICE__WEB_HOST", "\"https://authservice.swayrider-dev.hevanto-it.com\"")
+            buildConfigField("String", "AUTH_SERVICE__WEB_HOST", "\"https://authservice.swayrider-dev.example.com\"")
             buildConfigField("Integer", "AUTH_SERVICE_WEB_PORT", "443")
             buildConfigField("String", "AUTH_SERVICE_WEB_PREFIX", "\"/web/\"")
 
-            buildConfigField("String", "REGION_SERVICE_HOST", "\"https://regionservice.swayrider-dev.hevanto-it.com\"")
+            buildConfigField("String", "REGION_SERVICE_HOST", "\"https://regionservice.swayrider-dev.example.com\"")
             buildConfigField("Integer", "REGION_SERVICE_PORT", "443")
             buildConfigField("String", "REGION_SERVICE_PREFIX", "\"/api/v1/region/\"")
 
-            buildConfigField("String", "ROUTER_SERVICE_HOST", "\"https://routerservice.swayrider-dev.hevanto-it.com\"")
+            buildConfigField("String", "ROUTER_SERVICE_HOST", "\"https://routerservice.swayrider-dev.example.com\"")
             buildConfigField("Integer", "ROUTER_SERVICE_PORT", "443")
             buildConfigField("String", "ROUTER_SERVICE_PREFIX", "\"/api/v1/router/\"")
 
