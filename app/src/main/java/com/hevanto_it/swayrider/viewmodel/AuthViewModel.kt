@@ -45,6 +45,9 @@ class AuthViewModel(
     /** The URL embedded in the password reset email link. */
     val forgotPasswordResetUrl = "${BuildConfig.AUTH_SERVICE_WEB_HOST}:${BuildConfig.AUTH_SERVICE_WEB_PORT}${BuildConfig.AUTH_SERVICE_WEB_PREFIX}reset-password"
 
+    /** Returns the current JWT, or null if not authenticated. Always reads the latest stored value. */
+    fun getJwt(): String? = authStorage.getJwt()
+
     init {
         println("DEBUG: AuthViewModel init started")
         authenticate()

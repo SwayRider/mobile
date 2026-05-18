@@ -61,9 +61,12 @@ import org.maplibre.android.location.modes.RenderMode
 import org.maplibre.android.maps.MapLibreMap
 import org.maplibre.android.maps.MapView
 import org.maplibre.android.maps.Style
+import org.maplibre.android.module.http.HttpRequestUtil
 import org.maplibre.android.plugins.annotation.Symbol
 import org.maplibre.android.plugins.annotation.SymbolManager
 import org.maplibre.android.plugins.annotation.SymbolOptions
+import okhttp3.OkHttpClient
+import okhttp3.Interceptor
 
 private const val SEARCH_MARKER_ICON = "search_result_marker"
 
@@ -173,6 +176,23 @@ fun HomeScreen(
 
     val mapView = remember {
         MapLibre.getInstance(context)
+        // Inject the user JWT into all tile and style requests via OkHttp interceptor.
+        // getJwt() reads the current token on every request, so token refreshes are transparent.
+        HttpRequestUtil.setOkHttpClient(
+            OkHttpClient.Builder()
+                .addInterceptor(Interceptor { chain ->
+                    val jwt = authViewModel.getJwt()
+                    val request = if (jwt != null) {
+                        chain.request().newBuilder()
+                            .header("Authorization", "Bearer $jwt")
+                            .build()
+                    } else {
+                        chain.request()
+                    }
+                    chain.proceed(request)
+                })
+                .build()
+        )
         MapView(context).apply {
             val mv = this
             getMapAsync { map ->

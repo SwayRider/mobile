@@ -44,7 +44,7 @@ android {
             buildConfigField("String", "ROUTER_SERVICE_PREFIX", "\"/api/v1/router/\"")
 
             buildConfigField("String", "TILES_SERVICE_HOST", "\"http://192.168.1.222\"")
-            buildConfigField("Integer", "TILES_SERVICE_PORT", "34005")
+            buildConfigField("Integer", "TILES_SERVICE_PORT", "34000")
             buildConfigField("String", "TILES_SERVICE_PREFIX", "\"\"")
 
             buildConfigField("String", "SEARCH_SERVICE_HOST", "\"http://192.168.1.222\"")
@@ -77,7 +77,7 @@ android {
             buildConfigField("String", "ROUTER_SERVICE_PREFIX", "\"/api/v1/router/\"")
 
             buildConfigField("String", "TILES_SERVICE_HOST", "\"http://192.168.1.222\"")
-            buildConfigField("Integer", "TILES_SERVICE_PORT", "34005")
+            buildConfigField("Integer", "TILES_SERVICE_PORT", "34000")
             buildConfigField("String", "TILES_SERVICE_PREFIX", "\"\"")
 
             buildConfigField("String", "SEARCH_SERVICE_HOST", "\"http://192.168.1.222\"")
